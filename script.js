@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded",()=>{
     Init()
 })
+const domain = 'https://clicker-ix3d.onrender.com'
 
 async function Init() {
 
@@ -8,7 +9,7 @@ async function Init() {
     const window = document.querySelector('[data-el="window"]')
     const reset = document.querySelector('[data-el="reset"]')
 
-    const response = await fetch('http://127.0.0.1:5000/init')
+    const response = await fetch(domain)
     const data = await response.json()
 
     window.value = data.output
@@ -29,7 +30,7 @@ async function Init() {
 
 
 async function Click() {
-    const response = await fetch('http://127.0.0.1:5000/click')
+    const response = await fetch(domain)
 
     const data = await response.json()
 
@@ -37,7 +38,7 @@ async function Click() {
 }
 
 async function Reset(){
-    const response = await fetch('http://127.0.0.1:5000/reset')
+    const response = await fetch(domain)
 
     const data = await response.json()
 
