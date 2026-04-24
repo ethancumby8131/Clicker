@@ -9,7 +9,7 @@ async function Init() {
     const window = document.querySelector('[data-el="window"]')
     const reset = document.querySelector('[data-el="reset"]')
 
-    const response = await fetch(domain)
+    const response = await fetch(domain + "/init" )
     const data = await response.json()
 
     window.value = data.output
@@ -30,7 +30,7 @@ async function Init() {
 
 
 async function Click() {
-    const response = await fetch(domain)
+    const response = await fetch(domain + "/click")
 
     const data = await response.json()
 
@@ -38,7 +38,7 @@ async function Click() {
 }
 
 async function Reset(){
-    const response = await fetch(domain)
+    const response = await fetch(domain + "/reset")
 
     const data = await response.json()
 
